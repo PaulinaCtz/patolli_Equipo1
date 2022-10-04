@@ -4,19 +4,68 @@
  */
 package interfaces;
 
+import DibujarTableros.DibujarTablero7;
+import java.awt.Graphics;
+import java.awt.Panel;
+import javax.swing.Icon;
+import javax.swing.JPanel;
+
 /**
  *
- * @author Judi
+ * @author 52644
  */
 public class Tablero extends javax.swing.JFrame {
-
+    static DibujarTablero7 dibujar = new DibujarTablero7();
     /**
-     * Creates new form VistaJugador
+     * Creates new form Tablero
      */
     public Tablero() {
         initComponents();
     }
+    public static void pintar(){
+        dibujar.dibujarTablero(tablero.getGraphics());
+    }
+    public void generarLado(){
+        int caña1 = (int) (Math.random()*2);
+        int caña2 = (int) (Math.random()*2);
+        int caña3 = (int) (Math.random()*2);
+        int caña4 = (int) (Math.random()*2);
+        int caña5 = (int) (Math.random()*2);
+        
+        Icon uno = new javax.swing.ImageIcon(getClass().getResource("../img/cañaVacia.png"));
+        Icon dos = new javax.swing.ImageIcon(getClass().getResource("../img/caña1.png"));
+        
+        if(caña1==0){
+            cañaUno.setIcon(uno);
+        }else{
+            cañaUno.setIcon(dos);
+        }
+        if(caña2==0){
+            cañaDos.setIcon(uno);
+        }else{
+            cañaDos.setIcon(dos);
+        }
+        if(caña3==0){
+            cañaTres.setIcon(uno);
+        }else{
+            cañaTres.setIcon(dos);
+        }
+        if(caña4==0){
+            cañaCuatro.setIcon(uno);
+        }else{
+            cañaCuatro.setIcon(dos);
+        }
+        if(caña5==0){
+            cañaCinco.setIcon(uno);
+        }else{
+            cañaCinco.setIcon(dos);
+        }
 
+
+
+
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,101 +76,146 @@ public class Tablero extends javax.swing.JFrame {
     private void initComponents() {
 
         tablero = new javax.swing.JPanel();
-        datoJugador = new javax.swing.JPanel();
-        color = new javax.swing.JLabel();
-        jugador = new javax.swing.JLabel();
-        MontoTitulo = new javax.swing.JLabel();
-        fichas = new javax.swing.JPanel();
-        dinero = new javax.swing.JLabel();
-        lanzar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        cañas = new javax.swing.JPanel();
+        cañaUno = new javax.swing.JLabel();
+        cañaDos = new javax.swing.JLabel();
+        cañaTres = new javax.swing.JLabel();
+        cañaCuatro = new javax.swing.JLabel();
+        cañaCinco = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        tirarCañas = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Vista Usuario");
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
-        setResizable(false);
-        getContentPane().setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1200, 1200));
 
         tablero.setBackground(new java.awt.Color(255, 255, 255));
-        tablero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        tablero.setMinimumSize(new java.awt.Dimension(600, 600));
+        tablero.setPreferredSize(new java.awt.Dimension(720, 1080));
 
         javax.swing.GroupLayout tableroLayout = new javax.swing.GroupLayout(tablero);
         tablero.setLayout(tableroLayout);
         tableroLayout.setHorizontalGroup(
             tableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
         tableroLayout.setVerticalGroup(
             tableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
-        getContentPane().add(tablero);
-        tablero.setBounds(0, 0, 600, 600);
-
-        datoJugador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        datoJugador.setLayout(null);
-
-        color.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        color.setText("Color");
-        datoJugador.add(color);
-        color.setBounds(310, 10, 70, 60);
-
-        jugador.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jugador.setText("Jugador Uno");
-        datoJugador.add(jugador);
-        jugador.setBounds(10, 10, 280, 60);
-
-        MontoTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        MontoTitulo.setText("Monto Actual del Jugador");
-        datoJugador.add(MontoTitulo);
-        MontoTitulo.setBounds(20, 70, 320, 60);
-
-        fichas.setBackground(new java.awt.Color(255, 255, 255));
-        fichas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        fichas.setPreferredSize(new java.awt.Dimension(380, 380));
-
-        javax.swing.GroupLayout fichasLayout = new javax.swing.GroupLayout(fichas);
-        fichas.setLayout(fichasLayout);
-        fichasLayout.setHorizontalGroup(
-            fichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
-        );
-        fichasLayout.setVerticalGroup(
-            fichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
-        );
-
-        datoJugador.add(fichas);
-        fichas.setBounds(20, 240, 350, 350);
-
-        dinero.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        dinero.setText("20000");
-        datoJugador.add(dinero);
-        dinero.setBounds(20, 120, 290, 60);
-
-        lanzar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        lanzar.setText("Lanzar");
-        lanzar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Llenar tablero");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lanzarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        datoJugador.add(lanzar);
-        lanzar.setBounds(140, 190, 110, 40);
 
-        getContentPane().add(datoJugador);
-        datoJugador.setBounds(600, 0, 400, 600);
+        cañaUno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cañaVacia.png"))); // NOI18N
+
+        cañaDos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cañaVacia.png"))); // NOI18N
+
+        cañaTres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cañaVacia.png"))); // NOI18N
+        cañaTres.setText("jLabel3");
+
+        cañaCuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cañaVacia.png"))); // NOI18N
+        cañaCuatro.setText("jLabel4");
+
+        cañaCinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cañaVacia.png"))); // NOI18N
+        cañaCinco.setText("jLabel5");
+
+        javax.swing.GroupLayout cañasLayout = new javax.swing.GroupLayout(cañas);
+        cañas.setLayout(cañasLayout);
+        cañasLayout.setHorizontalGroup(
+            cañasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cañasLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(cañasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cañaUno)
+                    .addComponent(cañaTres, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGroup(cañasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cañaDos)
+                    .addComponent(cañaCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
+            .addGroup(cañasLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(cañaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cañasLayout.setVerticalGroup(
+            cañasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cañasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cañasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cañaDos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cañaUno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(cañasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cañaTres)
+                    .addComponent(cañaCuatro))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cañaCinco)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Century", 0, 24)); // NOI18N
+        jLabel1.setText("Cañas");
+
+        tirarCañas.setText("Tirar cañas");
+        tirarCañas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tirarCañasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tirarCañas))
+                            .addComponent(cañas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(291, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(cañas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tirarCañas)))
+                    .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(149, Short.MAX_VALUE))
+        );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanzarActionPerformed
-        // TODO add your handling code here:
-        Juego.tablero(tablero.getGraphics());
-        Juego.dados(fichas.getGraphics());
-    }//GEN-LAST:event_lanzarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        pintar();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tirarCañasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tirarCañasActionPerformed
+        generarLado();
+    }//GEN-LAST:event_tirarCañasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,26 +243,21 @@ public class Tablero extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Tablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Tablero().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel MontoTitulo;
-    private javax.swing.JLabel color;
-    private javax.swing.JPanel datoJugador;
-    private javax.swing.JLabel dinero;
-    private javax.swing.JPanel fichas;
-    private javax.swing.JLabel jugador;
-    private javax.swing.JButton lanzar;
-    private javax.swing.JPanel tablero;
+    private javax.swing.JLabel cañaCinco;
+    private javax.swing.JLabel cañaCuatro;
+    private javax.swing.JLabel cañaDos;
+    private javax.swing.JLabel cañaTres;
+    private javax.swing.JLabel cañaUno;
+    private javax.swing.JPanel cañas;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private static javax.swing.JPanel tablero;
+    private javax.swing.JButton tirarCañas;
     // End of variables declaration//GEN-END:variables
 }
