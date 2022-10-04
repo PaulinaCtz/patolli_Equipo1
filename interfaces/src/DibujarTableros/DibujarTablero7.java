@@ -73,5 +73,12 @@ public class DibujarTablero7{
         g.drawArc(125, 280, 30, 50, 90, 180);
         g.drawArc(645, 230, 30, 50, 90, -180); 
         g.drawArc(645, 280, 30, 50, 90, -180);
+        
+        //casillas amarillas
+        g.setColor(Color.yellow);
+        g.fillRect(400,200,50,30);
+        g.fillRect(320,230,30,50);
+        g.fillRect(350,330,50,30);
+        g.fillRect(450,280,30,50);
     }
 }
