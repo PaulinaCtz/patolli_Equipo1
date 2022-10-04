@@ -10,15 +10,17 @@ package objetosNegocio;
  * @author Dianey Elisa Velasquez Busani - 00000228270
  */
 public class Ficha {
-    int numFicha;
-    Jugador jugador;
-
-    public Ficha(int numFicha, Jugador jugador) {
-        this.numFicha = numFicha;
-        this.jugador = jugador;
-    }
+    private int numFicha;
+    private Jugador jugador;
+    private Casilla casilla;
 
     public Ficha() {
+        
+    }
+    public Ficha(int numFicha, Jugador jugador, Casilla casilla) {
+        this.numFicha = numFicha;
+        this.jugador = jugador;
+        this.casilla = casilla;
     }
 
     public int getNumFicha() {
@@ -36,5 +38,12 @@ public class Ficha {
     public void setJugador(Jugador jugador) {
         this.jugador = jugador;
     }
-    
+
+    public Casilla getCasilla() {
+        return casilla;
+    }
+
+    public void setCasilla(Casilla casilla) {
+        this.casilla = casilla;
+    }
 }

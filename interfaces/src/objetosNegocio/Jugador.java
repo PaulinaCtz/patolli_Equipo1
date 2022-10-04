@@ -5,8 +5,6 @@
  */
 package objetosNegocio;
 
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  *
@@ -14,16 +12,27 @@ import java.util.ArrayList;
  */
 public class Jugador {
     
-    float dinero;
-    Ficha fichas;
+    private float dinero;
+    private Ficha[] fichas;
+    private Tablero tablero; 
+    private Caña[] cañas;
+    private Apuesta[] apuestas;
     
     public Jugador(){
         
     }
 
-    public Jugador(float dinero, Ficha fichas) {
+    public Jugador(float dinero, Ficha[] fichas) {
         this.dinero = dinero;
         this.fichas = fichas;
+    }
+
+    public Jugador(float dinero, Ficha[] fichas, Tablero tablero, Caña[] cañas, Apuesta[] apuestas) {
+        this.dinero = dinero;
+        this.fichas = fichas;
+        this.tablero = tablero;
+        this.cañas = cañas;
+        this.apuestas = apuestas;
     }
 
     public float getDinero() {
@@ -34,15 +43,35 @@ public class Jugador {
         this.dinero = dinero;
     }
 
-    public Ficha getFichas() {
+    public Ficha[] getFichas() {
         return fichas;
     }
 
-    public void setFichas(Ficha fichas) {
+    public void setFichas(Ficha[] fichas) {
         this.fichas = fichas;
     }
-    
-    
 
-    
+    public Tablero getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
+    }
+
+    public Caña[] getCañas() {
+        return cañas;
+    }
+
+    public void setCañas(Caña[] cañas) {
+        this.cañas = cañas;
+    }
+
+    public Apuesta[] getApuestas() {
+        return apuestas;
+    }
+
+    public void setApuestas(Apuesta[] apuestas) {
+        this.apuestas = apuestas;
+    }
 }

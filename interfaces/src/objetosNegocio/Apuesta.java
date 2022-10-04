@@ -10,13 +10,19 @@ package objetosNegocio;
  * @author Dianey Elisa Velasquez Busani - 00000228270
  */
 public class Apuesta {
-    int monto;
+    private int monto;
+    private Jugador jugador;
 
     public Apuesta() {
     }
 
     public Apuesta(int monto) {
         this.monto = monto;
+    }
+
+    public Apuesta(int monto, Jugador jugador) {
+        this.monto = monto;
+        this.jugador = jugador;
     }
 
     public int getMonto() {
@@ -26,5 +32,12 @@ public class Apuesta {
     public void setMonto(int monto) {
         this.monto = monto;
     }
-    
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
 }

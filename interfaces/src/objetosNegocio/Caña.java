@@ -10,8 +10,10 @@ package objetosNegocio;
  * @author Dianey Elisa Velasquez Busani - 00000228270
  */
 public class Caña {
-    int numCaña;
-    boolean lado;
+    private int numCaña;
+    private boolean lado;
+    private Tablero tablero;
+    private Jugador jugador;
 
     public Caña() {
     }
@@ -21,6 +23,13 @@ public class Caña {
         this.lado = lado;
     }
 
+    public Caña(int numCaña, boolean lado, Tablero tablero, Jugador jugador) {
+        this.numCaña = numCaña;
+        this.lado = lado;
+        this.tablero = tablero;
+        this.jugador = jugador;
+    }
+    
     public int getNumCaña() {
         return numCaña;
     }
@@ -36,5 +45,20 @@ public class Caña {
     public void setLado(boolean lado) {
         this.lado = lado;
     }
-    
+
+    public Tablero getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(Tablero tablero) {
+        this.tablero = tablero;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
 }
