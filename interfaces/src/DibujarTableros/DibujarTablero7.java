@@ -80,5 +80,45 @@ public class DibujarTablero7{
         g.fillRect(320,230,30,50);
         g.fillRect(350,330,50,30);
         g.fillRect(450,280,30,50);
+        
+        //triangulos
+        //Arriba
+        int[] puntosX={350,400,350};
+        int[] puntosY={70,80,90};
+        g.setColor(Color.red);
+        g.drawPolygon(puntosX, puntosY,3);
+        g.fillPolygon(puntosX, puntosY,3);
+        int[] puntosX2={450,400,450};
+        int[] puntosY2={70,80,90};
+        g.setColor(Color.red);
+        g.drawPolygon(puntosX2, puntosY2,3);
+        g.fillPolygon(puntosX2, puntosY2,3);
+        //Abajo
+        int[] puntosX3={450,400,450};
+        int[] puntosY3={470,480,490};
+        g.setColor(Color.red);
+        g.fillPolygon(puntosX3, puntosY3,3);
+        int[] puntosX4={350,400,350};
+        int[] puntosY4={470,480,490};
+        g.setColor(Color.red);
+        g.fillPolygon(puntosX4, puntosY4,3);
+        //Izquierda
+        int[] puntosX5={190,200,210};
+        int[] puntosY5={230,280,230};
+        g.setColor(Color.red);
+        g.fillPolygon(puntosX5, puntosY5,3);
+        int[] puntosX6={190,200,210};
+        int[] puntosY6={330,280,330};
+        g.setColor(Color.red);
+        g.fillPolygon(puntosX6, puntosY6,3);
+        //Derecha
+        int[] puntosX7={590,600,610};
+        int[] puntosY7={230,280,230};
+        g.setColor(Color.red);
+        g.fillPolygon(puntosX7, puntosY7,3);
+        int[] puntosX8={590,600,610};
+        int[] puntosY8={330,280,330};
+        g.setColor(Color.red);
+        g.fillPolygon(puntosX8, puntosY8,3);
     }
 }
