@@ -4,19 +4,26 @@
  */
 package interfaces;
 
+import DibujarTableros.DibujarTablero7;
+import java.awt.Graphics;
+import java.awt.Panel;
+import javax.swing.JPanel;
+
 /**
  *
- * @author Judi
+ * @author 52644
  */
 public class Tablero extends javax.swing.JFrame {
-
+    DibujarTablero7 dibujar = new DibujarTablero7();
     /**
-     * Creates new form VistaJugador
+     * Creates new form Tablero
      */
     public Tablero() {
         initComponents();
     }
-
+    private void pintar(){
+        dibujar.dibujarTablero(tablero.getGraphics());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,101 +34,59 @@ public class Tablero extends javax.swing.JFrame {
     private void initComponents() {
 
         tablero = new javax.swing.JPanel();
-        datoJugador = new javax.swing.JPanel();
-        color = new javax.swing.JLabel();
-        jugador = new javax.swing.JLabel();
-        MontoTitulo = new javax.swing.JLabel();
-        fichas = new javax.swing.JPanel();
-        dinero = new javax.swing.JLabel();
-        lanzar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Vista Usuario");
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
-        setResizable(false);
-        getContentPane().setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tablero.setBackground(new java.awt.Color(255, 255, 255));
-        tablero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        tablero.setMinimumSize(new java.awt.Dimension(600, 600));
+        tablero.setPreferredSize(new java.awt.Dimension(720, 1080));
 
         javax.swing.GroupLayout tableroLayout = new javax.swing.GroupLayout(tablero);
         tablero.setLayout(tableroLayout);
         tableroLayout.setHorizontalGroup(
             tableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         tableroLayout.setVerticalGroup(
             tableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 885, Short.MAX_VALUE)
         );
 
-        getContentPane().add(tablero);
-        tablero.setBounds(0, 0, 600, 600);
-
-        datoJugador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        datoJugador.setLayout(null);
-
-        color.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        color.setText("Color");
-        datoJugador.add(color);
-        color.setBounds(310, 10, 70, 60);
-
-        jugador.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jugador.setText("Jugador Uno");
-        datoJugador.add(jugador);
-        jugador.setBounds(10, 10, 280, 60);
-
-        MontoTitulo.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        MontoTitulo.setText("Monto Actual del Jugador");
-        datoJugador.add(MontoTitulo);
-        MontoTitulo.setBounds(20, 70, 320, 60);
-
-        fichas.setBackground(new java.awt.Color(255, 255, 255));
-        fichas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        fichas.setPreferredSize(new java.awt.Dimension(380, 380));
-
-        javax.swing.GroupLayout fichasLayout = new javax.swing.GroupLayout(fichas);
-        fichas.setLayout(fichasLayout);
-        fichasLayout.setHorizontalGroup(
-            fichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
-        );
-        fichasLayout.setVerticalGroup(
-            fichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
-        );
-
-        datoJugador.add(fichas);
-        fichas.setBounds(20, 240, 350, 350);
-
-        dinero.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        dinero.setText("20000");
-        datoJugador.add(dinero);
-        dinero.setBounds(20, 120, 290, 60);
-
-        lanzar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        lanzar.setText("Lanzar");
-        lanzar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lanzarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        datoJugador.add(lanzar);
-        lanzar.setBounds(140, 190, 110, 40);
 
-        getContentPane().add(datoJugador);
-        datoJugador.setBounds(600, 0, 400, 600);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(1092, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(144, 144, 144))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tablero, javax.swing.GroupLayout.DEFAULT_SIZE, 1299, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tablero, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lanzarActionPerformed
-        // TODO add your handling code here:
-        Juego.tablero(tablero.getGraphics());
-        Juego.dados(fichas.getGraphics());
-    }//GEN-LAST:event_lanzarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        pintar();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,26 +114,13 @@ public class Tablero extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Tablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Tablero().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel MontoTitulo;
-    private javax.swing.JLabel color;
-    private javax.swing.JPanel datoJugador;
-    private javax.swing.JLabel dinero;
-    private javax.swing.JPanel fichas;
-    private javax.swing.JLabel jugador;
-    private javax.swing.JButton lanzar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel tablero;
     // End of variables declaration//GEN-END:variables
 }
