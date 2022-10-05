@@ -12,7 +12,7 @@ import objetosNegocio.Jugador;
  *
  * @author Paulina Cortez Alamilla.
  */
-public class Director {
+public class DirectorFicha {
 
     public void construirFichaAzul(BuilderFicha builder, int numeroFicha) {
         builder.setNumFicha(numeroFicha);
