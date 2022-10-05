@@ -20,10 +20,11 @@ public class Ficha {
     public Ficha() {
         
     }
-    public Ficha(int numFicha, Jugador jugador, Casilla casilla) {
+    public Ficha(int numFicha, Jugador jugador, Casilla casilla, Color color) {
         this.numFicha = numFicha;
         this.jugador = jugador;
         this.casilla = casilla;
+        this.color = color;
     }
 
     public int getNumFicha() {
