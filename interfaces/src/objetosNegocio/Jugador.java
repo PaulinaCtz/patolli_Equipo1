@@ -5,6 +5,11 @@
  */
 package objetosNegocio;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
 
 /**
  *
@@ -17,6 +22,9 @@ public class Jugador {
     private Tablero tablero; 
     private Caña[] cañas;
     private Apuesta[] apuestas;
+    private Color color;
+    private boolean jugando=false;
+    private int fichaEnTurno = 1;
     
     public Jugador(){
         
@@ -74,4 +82,38 @@ public class Jugador {
     public void setApuestas(Apuesta[] apuestas) {
         this.apuestas = apuestas;
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor() {
+        int colorFichas = (int)(Math.random()*4);
+        if(colorFichas ==0){
+            this.color = Color.BLUE;
+        }else if(colorFichas==1){
+            this.color = Color.RED;
+        }else if(colorFichas ==2){
+            this.color = Color.GREEN;
+        }else{
+            this.color = Color.black;
+        }
+    }
+
+    public boolean isJugando() {
+        return jugando;
+    }
+
+    public void setJugando(boolean jugando) {
+        this.jugando = jugando;
+    }
+
+    public int getFichaEnTurno() {
+        return fichaEnTurno;
+    }
+
+    public void setFichaEnTurno(int fichaEnTurno) {
+        this.fichaEnTurno = fichaEnTurno;
+    }
+    
 }

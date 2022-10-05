@@ -5,6 +5,8 @@
  */
 package objetosNegocio;
 
+import java.awt.Color;
+
 /**
  *
  * @author Dianey Elisa Velasquez Busani - 00000228270
@@ -13,6 +15,7 @@ public class Ficha {
     private int numFicha;
     private Jugador jugador;
     private Casilla casilla;
+    private Color color;
 
     public Ficha() {
         
@@ -46,4 +49,13 @@ public class Ficha {
     public void setCasilla(Casilla casilla) {
         this.casilla = casilla;
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor() {
+        this.color = jugador.getColor();
+    }
+    
 }

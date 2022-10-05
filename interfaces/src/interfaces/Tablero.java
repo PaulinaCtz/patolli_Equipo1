@@ -4,6 +4,7 @@
  */
 package interfaces;
 
+import DibujarTableros.Cañas;
 import DibujarTableros.DibujarTablero7;
 import java.awt.Graphics;
 import java.awt.Panel;
@@ -25,47 +26,6 @@ public class Tablero extends javax.swing.JFrame {
     public static void pintar(){
         dibujar.dibujarTablero(tablero.getGraphics());
     }
-    public void generarLado(){
-        int caña1 = (int) (Math.random()*2);
-        int caña2 = (int) (Math.random()*2);
-        int caña3 = (int) (Math.random()*2);
-        int caña4 = (int) (Math.random()*2);
-        int caña5 = (int) (Math.random()*2);
-        
-        Icon uno = new javax.swing.ImageIcon(getClass().getResource("../img/cañaVacia.png"));
-        Icon dos = new javax.swing.ImageIcon(getClass().getResource("../img/caña1.png"));
-        
-        if(caña1==0){
-            cañaUno.setIcon(uno);
-        }else{
-            cañaUno.setIcon(dos);
-        }
-        if(caña2==0){
-            cañaDos.setIcon(uno);
-        }else{
-            cañaDos.setIcon(dos);
-        }
-        if(caña3==0){
-            cañaTres.setIcon(uno);
-        }else{
-            cañaTres.setIcon(dos);
-        }
-        if(caña4==0){
-            cañaCuatro.setIcon(uno);
-        }else{
-            cañaCuatro.setIcon(dos);
-        }
-        if(caña5==0){
-            cañaCinco.setIcon(uno);
-        }else{
-            cañaCinco.setIcon(dos);
-        }
-
-
-
-
-        
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -85,9 +45,19 @@ public class Tablero extends javax.swing.JFrame {
         cañaCinco = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         tirarCañas = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        ficha2 = new javax.swing.JLabel();
+        ficha3 = new javax.swing.JLabel();
+        ficha4 = new javax.swing.JLabel();
+        ficha5 = new javax.swing.JLabel();
+        ficha6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 1200));
 
         tablero.setBackground(new java.awt.Color(255, 255, 255));
         tablero.setPreferredSize(new java.awt.Dimension(720, 1080));
@@ -168,6 +138,62 @@ public class Tablero extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Dinero:");
+
+        jLabel5.setText("Fichas:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ficha2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ficha3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ficha4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ficha5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ficha6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ficha2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ficha3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ficha4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ficha5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ficha6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        jLabel2.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+        jLabel2.setText("Jugador 1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -184,8 +210,10 @@ public class Tablero extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(tirarCañas))
-                            .addComponent(cañas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(291, Short.MAX_VALUE))
+                            .addComponent(cañas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,15 +222,18 @@ public class Tablero extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
                                 .addComponent(cañas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tirarCañas)))
-                    .addComponent(tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tirarCañas))
+                        .addGap(11, 11, 11)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(149, Short.MAX_VALUE))
         );
 
@@ -214,7 +245,8 @@ public class Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tirarCañasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tirarCañasActionPerformed
-        generarLado();
+        Cañas cañas = new Cañas();
+        cañas.generarLado();
     }//GEN-LAST:event_tirarCañasActionPerformed
 
     /**
@@ -249,14 +281,25 @@ public class Tablero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cañaCinco;
-    private javax.swing.JLabel cañaCuatro;
-    private javax.swing.JLabel cañaDos;
-    private javax.swing.JLabel cañaTres;
-    private javax.swing.JLabel cañaUno;
+    public static javax.swing.JLabel cañaCinco;
+    public static javax.swing.JLabel cañaCuatro;
+    public static javax.swing.JLabel cañaDos;
+    public static javax.swing.JLabel cañaTres;
+    public static javax.swing.JLabel cañaUno;
     private javax.swing.JPanel cañas;
+    private javax.swing.JLabel ficha2;
+    private javax.swing.JLabel ficha3;
+    private javax.swing.JLabel ficha4;
+    private javax.swing.JLabel ficha5;
+    private javax.swing.JLabel ficha6;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private static javax.swing.JPanel tablero;
     private javax.swing.JButton tirarCañas;
     // End of variables declaration//GEN-END:variables
