@@ -14,11 +14,8 @@ import objetosNegocio.*;
  */
 public interface Builder {
     void setDinero(float dinero);
-    void setFichas(Ficha fichas);
+    void setFichas(Ficha[] fichas);
     void setTablero(Tablero tablero);
-    void setCaña(Caña cañas);
-    void setApuesta(Apuesta apuesta);
-    void setColor(Color color);
-    void setJugando(boolean jugando);
-    void setFichaTurno(int fichaEnTurno);
+    void setCaña(Caña[] cañas);
+    void setApuesta(Apuesta[] apuesta);
 }
