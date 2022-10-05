@@ -12,7 +12,7 @@ import objetosNegocio.*;
  *
  * @author Dianey Elisa Velasquez Busani - 00000228270
  */
-public interface Builder {
+public interface BuilderJugador {
     void setDinero(float dinero);
     void setFichas(Ficha[] fichas);
     void setTablero(Tablero tablero);

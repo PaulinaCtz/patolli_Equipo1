@@ -12,7 +12,7 @@ import objetosNegocio.*;
  *
  * @author Dianey Elisa Velasquez Busani - 00000228270
  */
-public class JugadorBuilder implements Builder{
+public class JugadorBuilder implements BuilderJugador{
     private float dinero;
     private Ficha[] fichas;
     private Tablero tablero; 
