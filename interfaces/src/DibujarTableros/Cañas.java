@@ -13,12 +13,15 @@ import javax.swing.Icon;
  */
 public class Cañas {
     
+    public static int suma = 0;
     public void generarLado(){
         int caña1 = (int) (Math.random()*2);
         int caña2 = (int) (Math.random()*2);
         int caña3 = (int) (Math.random()*2);
         int caña4 = (int) (Math.random()*2);
         int caña5 = (int) (Math.random()*2);
+        
+        suma = caña1+caña2+caña3+caña4+caña5;
         
         Icon uno = new javax.swing.ImageIcon(getClass().getResource("../img/cañaVacia.png"));
         Icon dos = new javax.swing.ImageIcon(getClass().getResource("../img/caña1.png"));
